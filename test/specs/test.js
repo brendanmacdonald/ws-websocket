@@ -9,7 +9,7 @@ let ws;
     beforeEach( () => {
         count = 0;
         ws = new WebSocket(url, {
-            origin: 'https://websocket.org'
+            origin: 'https://websocket.org',
         });
     });
 
