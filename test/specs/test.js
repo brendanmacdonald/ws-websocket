@@ -1,20 +1,17 @@
 const WebSocket = require('ws');
 const url = require('../utils/util').url;
 
-describe('Websocket example', () => {
-
-let count;
+let count = 0;
 let ws;
 
+describe('Websocket example', () => {
     beforeEach( () => {
-        count = 0;
         ws = new WebSocket(url, {
             origin: 'https://websocket.org',
         });
     });
 
-    it('basic search', () => {
-
+    it('send and receive messages', () => {
         ws.on('open', () => {
             console.log('Connected...');
             ws.send("This is the message I am sending!");
